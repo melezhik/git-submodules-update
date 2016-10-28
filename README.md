@@ -1,10 +1,14 @@
 # SYNOPSIS
 
-* recursively walks through git submodules
+* recursively walks through git submodules kept under some superproject
 
-* fetches and merges changes from remote repos ( using `git submodules update --init --remote --merge` command )
+* for every git submodule:
 
-* superproject: commit changes applied to sub modules and push them to remote superproject repo
+  * fetches changes from related remote repository
+  * merge changes into local repository
+  * `git submodules update --init --remote --merge` command is executed under the hood 
+
+* superproject: commit changes applied to sub modules and push them to remote superproject repository
 
 # INSTALL
 
@@ -13,10 +17,23 @@
 # USAGE
 
     # all the list
-    $ sparrow plg run git-submodules-update
+    $ sparrow plg run git-submodules-update \
+    --param directory=/path/to/working/copy/directory/
 
     # single project
-    $ sparrow plg run git-submodules-update --param project=foo 
+    $ sparrow plg run git-submodules-update \
+    --param project=foo \
+    --param directory=/path/to/working/copy/directory/
+
+# Parameters
+
+## directory
+
+Should be a path for working copy directory of git superproject with git submodules. Obligatory. No default values.
+
+## project
+
+If set, only perform action for given git submodule denoted as $project. Optional. No default value.
 
 # Author
 

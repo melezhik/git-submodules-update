@@ -1,7 +1,11 @@
 project=$(config project)
+directory=$(config directory)
+
+echo working copy directory: $directory
+
 git config --global push.default matching
 
-cd ~/cookbooks
+cd $directory || exit 1
 
 
 if test -z $project; then
