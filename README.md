@@ -1,12 +1,10 @@
 # SYNOPSIS
 
-  1) recursively walks through git submodules
+* recursively walks through git submodules
 
-  2) fetches changes from remote repos ( using git submodules update --init --remote --merge )
+* fetches and merges changes from remote repos ( using `git submodules update --init --remote --merge` command )
 
-  3) merge them 
-
-  4) superproject: commit changes applied to sub modules and push to remote superproject repo
+* superproject: commit changes applied to sub modules and push them to remote superproject repo
 
 # INSTALL
 
