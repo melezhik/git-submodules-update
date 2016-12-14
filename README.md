@@ -5,8 +5,7 @@
 * for every git submodule:
 
   * fetches changes from related remote repository
-  * merge changes into local repository
-  * `git submodules update --init --remote --merge` command is executed under the hood 
+  * `git submodules update --init --remote ` command is executed under the hood 
 
 * superproject: commit changes applied to sub modules and push them to remote superproject repository
 
