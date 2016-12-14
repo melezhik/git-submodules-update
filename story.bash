@@ -14,7 +14,7 @@ git submodule --quiet sync || exit 1
 if test -z $project; then
 
   git submodule update --init --recursive --remote  || exit 1
-  git submodule foreach git branch -v || exit 1
+  git submodule foreach git branch -v --no-color -a || exit 1
 else
 
   echo updating $project ...
