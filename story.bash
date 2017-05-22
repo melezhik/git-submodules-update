@@ -1,31 +1,19 @@
+set -e
+
 project=$(config project)
 directory=$(config directory)
 
 echo working copy directory: $directory
 
-git config --global push.default matching
+cd $directory
 
-cd $directory || exit 1
-
-git pull || exit 1
-git submodule --quiet update || exit 1
-git submodule --quiet sync || exit 1
+git submodule update
+git submodule sync
 
 if test -z $project; then
-
-  git submodule update --init --recursive --remote  || exit 1
-  git submodule foreach git branch -v --no-color -a || exit 1
+  git submodule update --init --recursive --remote
 else
-
   echo updating $project ...
-  git submodule --quiet update --init --remote $project || exit 1
-  git submodule status $project || exit 1
+  git submodule update --init --remote $project
 fi
-
-git commit -a -m "update git submodules"
-
-git pull || exit 1
-
-git push || exit 1
-
 
