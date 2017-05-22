@@ -7,7 +7,7 @@ echo working copy directory: $directory
 
 cd $directory
 
-gitt pull
+git pull
 git submodule update
 git submodule sync
 
