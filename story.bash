@@ -12,9 +12,9 @@ git submodule update
 git submodule sync
 
 if test -z $project; then
-  git submodule update --init --recursive --remote
+  git submodule update --init --recursive --remote --merge 
 else
   echo updating $project ...
-  git submodule update --init --remote $project
+  git submodule update --init --remote $project --merge 
 fi
 
