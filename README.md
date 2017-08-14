@@ -34,6 +34,12 @@ If set, only perform action for given git submodule denoted as $project.
 
 Optional. No default value.
 
+## debug
+
+Enable bash debug mode.
+
+Optional. No default value.
+
 # Author
 
 [Alexey Melezhik](mailto:melezhik@gmail.com)
